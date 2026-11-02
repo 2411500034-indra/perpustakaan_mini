@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "147171745681",
+    "project_id": "perpustakaan-mini-9ac46",
+    "storage_bucket": "perpustakaan-mini-9ac46.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147171745681:android:eea3df48f6de192611c430",
+        "android_client_info": {
+          "package_name": "com.example.perpustakaan_mini"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAl5Cc0dTnd5QCpAUrXFoXI7eGIHxaZ5w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
