@@ -22,7 +22,7 @@ class HomeCrudPage extends StatelessWidget {
       context: context,
       isScrollControlled: true,
       showDragHandle: true,
-      builder: (sheetContext) {
+      builder: (_) {
         return StatefulBuilder(
           builder: (context, setSheetState) {
             Future<void> save() async {
@@ -42,16 +42,16 @@ class HomeCrudPage extends StatelessWidget {
               );
 
               try {
-                final provider = context.read<BookProvider>();
+                final bookProvider = context.read<BookProvider>();
                 if (book == null) {
-                  await provider.addBook(updatedBook);
+                  await bookProvider.addBook(updatedBook);
                 } else {
-                  await provider.updateBook(updatedBook);
+                  await bookProvider.updateBook(updatedBook);
                 }
-                if (sheetContext.mounted) Navigator.pop(sheetContext);
+                if (context.mounted) Navigator.of(context).pop();
               } catch (exception) {
-                if (!sheetContext.mounted) return;
-                ScaffoldMessenger.of(sheetContext).showSnackBar(
+                if (!context.mounted) return;
+                ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Gagal menyimpan buku: $exception')),
                 );
                 setSheetState(() => isSaving = false);
@@ -203,9 +203,11 @@ class HomeCrudPage extends StatelessWidget {
             tooltip: 'Logout',
             onPressed: () async {
               try {
+                context.read<BookProvider>().clearData();
                 await context.read<AuthProvider>().logout();
               } catch (exception) {
                 if (!context.mounted) return;
+                context.read<BookProvider>().fetchBooksStream();
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(content: Text('Gagal logout: $exception')),
                 );

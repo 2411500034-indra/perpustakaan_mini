@@ -7,7 +7,7 @@ class AuthProvider extends ChangeNotifier {
 
   final FirebaseAuth _firebaseAuth;
 
-  //menggunakan authStateChanges() yang mengembalikan Stream<User?>
+  //menggunakan authStateChanges yang mengembalikan Stream<User?>
   //Stream ini dipasang untuk mendengarkan perubahan status autentikasi pengguna secara otomatis
   Stream<User?> get authStateChanges => _firebaseAuth.authStateChanges();
 

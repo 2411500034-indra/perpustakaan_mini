@@ -57,7 +57,6 @@ class DefaultFirebaseOptions {
     projectId: 'perpustakaan-mini-9ac46',
     storageBucket: 'perpustakaan-mini-9ac46.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyApfOBrI971hzcpqc6KMdc2k21GBJBNBK0',
     appId: '1:147171745681:ios:d4d4194531904a2011c430',
@@ -66,7 +65,6 @@ class DefaultFirebaseOptions {
     storageBucket: 'perpustakaan-mini-9ac46.firebasestorage.app',
     iosBundleId: 'com.example.perpustakaanMini',
   );
-
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyApfOBrI971hzcpqc6KMdc2k21GBJBNBK0',
     appId: '1:147171745681:ios:d4d4194531904a2011c430',

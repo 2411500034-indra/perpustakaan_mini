@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-
+//operasional CRUD untuk data buku di Firestore
 class BookModel {
   const BookModel({
+    //atribut buku 
     required this.id,
     required this.title,
     required this.author,
